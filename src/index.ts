@@ -60,10 +60,10 @@ export function usePaginate<T>(items: T[], options: UsePaginateOptions = {}) {
   const lastPageIndex = safeIndex(pageCount - 1);
   const nextPageIndex = safeIndex(pageIndex + 1);
   const prevPageIndex = safeIndex(pageIndex - 1);
+  const canFirstPage = pageIndex !== 0;
+  const canLastPage = pageIndex !== lastPageIndex;
   const canNextPage = pageIndex < lastPageIndex;
   const canPrevPage = pageIndex > 0;
-  const canFirstPage = pageIndex > 0;
-  const canLastPage = pageIndex > 0;
 
   useEffect(() => {
     if (pageIndex > lastPageIndex) {
@@ -109,6 +109,8 @@ export function usePaginate<T>(items: T[], options: UsePaginateOptions = {}) {
   }
 
   return {
+    canFirstPage,
+    canLastPage,
     canNextPage,
     canPrevPage,
     changePage: handleChangePage,
