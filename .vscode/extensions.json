@@ -4,6 +4,6 @@
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "oven.bun-vscode",
-    "yoavbls.pretty-ts-errors",
+    "yoavbls.pretty-ts-errors"
   ]
 }
